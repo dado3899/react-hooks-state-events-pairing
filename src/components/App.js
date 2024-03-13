@@ -1,4 +1,6 @@
 import video from "../data/video.js";
+import Headers from "./Headers.js";
+import CommentsList from "./CommentsList.js";
 
 function App() {
   console.log("Here's your data:", video);
@@ -8,11 +10,13 @@ function App() {
       <iframe
         width="919"
         height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        frameBorder="0"
+        src={video.embedUrl}
+        // frameBorder="0"
         allowFullScreen
         title="Thinking in React"
       />
+      <Headers video={video}/>
+      <CommentsList video={video}/>
     </div>
   );
 }
